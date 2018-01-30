@@ -1,13 +1,9 @@
 #!groovy
 
-stage('Initialization') {
-  checkout scm
-} 
+stage 'Initialization') 
 
 node {
-stage('Maven') {
-withEnv(["PATH+MAVEN=${tool 'M3'}/bin"]) {
-    sh "mvn clean verify"
-}
+  echo 'Entered into the node'
+checkout scm
 }
 }
