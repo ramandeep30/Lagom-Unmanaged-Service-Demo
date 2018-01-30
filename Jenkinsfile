@@ -1,6 +1,6 @@
 #!groovy
 
-stage 'Initialization'
+stage 'abc'
 
 node {
   echo 'Entered into the node'
