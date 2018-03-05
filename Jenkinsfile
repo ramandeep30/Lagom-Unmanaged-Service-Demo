@@ -9,12 +9,5 @@ checkout scm
      sh "mvn clean verify"
      }
    }
-  stage('TestPOC') {
-   post {
-  always {
-    junit "path/to/xml"
-     }
-   }
-  }
 }
 
