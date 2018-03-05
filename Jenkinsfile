@@ -10,12 +10,11 @@ checkout scm
      }
    }
   stage('TestPOC') {
-    post {
-      always {
-        archive"target/**/*"
-        junit 'target/surefire-reports/*.xml'
-      }
-    }
+   post {
+  always {
+    junit "path/to/xml"
+     }
+   }
   }
 }
 
