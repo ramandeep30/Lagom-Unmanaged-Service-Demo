@@ -9,11 +9,7 @@ node {
                  withEnv(["PATH+MAVEN=${tool 'M3'}/bin"]) {
                  sh "mvn clean verify"
            }
-     }
-   catch {
-     echo 'Entered into catch'
-    }
-   finally {
+     } finally {
        stage('post-build') {
          post {
          always {
