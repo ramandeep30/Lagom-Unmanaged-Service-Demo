@@ -10,13 +10,6 @@ node {
                  sh "mvn clean verify"
            }
      } finally {
-       stage('post-build') {
-         post {
-         always {
-            archive "target/**/*"
             junit 'target/surefire-reports/*.xml'
         }
-      }
-    }
   }
- }
