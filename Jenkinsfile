@@ -9,7 +9,7 @@ checkout scm
      sh "mvn clean verify"
      }
   }
-  stage('Test') {
+  stage('post-build') {
   post {
         always {
             archive "target/**/*"
