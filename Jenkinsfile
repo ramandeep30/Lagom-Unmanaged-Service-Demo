@@ -11,6 +11,7 @@ node {
            }
      }
   }finally {
-            junit 'target/surefire-reports/*.xml'
+           archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+            junit 'build/reports/**/*.xml'
         }
   }
