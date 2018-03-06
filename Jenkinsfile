@@ -2,6 +2,7 @@
 
 
 node {
+  try {
   echo 'Entered into the node'
 checkout scm
   stage('Maven') {
@@ -9,13 +10,17 @@ checkout scm
      sh "mvn clean verify"
      }
   }
-  stage('post-build') {
-  post {
+  } catch {
+  
+  }
+    finally {
+     stage('post-build') {
+     post {
         always {
             archive "target/**/*"
             junit 'target/surefire-reports/*.xml'
         }
+      }
     }
   }
-}
-
+ }
